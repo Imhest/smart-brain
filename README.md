@@ -1,68 +1,71 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Smart Brain App
 
-## Available Scripts
+Este es un instructivo de como crear una app en React, ejecutarla y modificar la misma. La app finalizada es una app de reconocimiento de imágenes que usa React para el frontend, una API de reconocimiento de imágenes llamada Clarifai, y Node.js y Express.js para el backend. Va a tener sistema de login y va a ser 100% responsive.
 
-In the project directory, you can run:
+### Crear app de React desde 0
 
-### `npm start`
+Primero hay que instalar el paquete create-react-app, en este caso, conviene instalarlo globalmente para poder crear nuevos proyectos sin necesidad de instalarlo cada vez:
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+npm install -g create-react-app
+```
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Despues, usar este comando en consola:
 
-### `npm test`
+```
+npm create-react-app carpeta
+```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Tambíen puede usarse un comando de las nuevas versiones de Node, npx, que instala la dependencia y la ejecuta:
 
-### `npm run build`
+```
+npx create-react-app carpeta
+```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Esto va a crear un proyecto de React, con todas sus dependencias y va a generar su propio package.json.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Despues de eso ir a la carpeta del proyecto usando cd, y hacer "npm start" para iniciarlo.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Instalar un proyecto existente
 
-### `npm run eject`
+Un proyecto que usa NPM siempre debería tener un package.json, que lista las dependencias del mismo. De esta forma cuando usamos "npm install" va a descargar todo lo que necesita la app para ejecutarse.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+npm install
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Algunas veces, ciertas dependencias necesitan otros paquetes de por sí, y los mismos no se agregan a el archivo package.json. Si es así, deberían aparecer como errores en consola al intentar ejecutar la app, listando el nombre del paquete para hacer la instalación manual.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+También puede suceder que en vez de npm, se haya usado Yarn para instalar paquetes. Si es asé debería haber un archivo yarn.lock. Los proyectos no pueden usar yarn y npm al mismo tiempo.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Scripts de Node
 
-## Learn More
+A demás de listar las dependencias, un archivo package.json contiene los comandos para ejecutar y realizar pruebas, entre otros. En una instalación de React de 0 normalmente son:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* npm start
+* npm build
+* npm test
+* npm eject
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+npm start ejecuta la app, npm build la empaqueta para producción.
 
-### Code Splitting
+## Diario de desarrollo de la app
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+React funciona a traves del uso de componentes. Éstos van uno dentro del otro dependiendo en que pantalla estemos trabajando. Los componentes se usan como si fueran tags de html, esto es un lenguaje de React llamado JSX.
 
-### Analyzing the Bundle Size
+Por ejemplo, si tenemos un componente <Button> y necesitamos que <Button>, el cual fue creado en Button.js, esté en la pantalla de login, la cual está en Login.js, usaríamos el componente <Button> dentro de Login.js. De todas formas <Button> puede ser usado en cualquier parte de la app, ya que es un componente independiente. Para una explicación con ejemplos, ver el archivo App.js (está comentado).
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Los componentes de React se definen desde una función (functional components) o desde una clase (class components) y pueden ser de 2 tipos:
+  * Stateless Components: Son componentes que no tienen estado (STATE). Es decir que no guardan información por si mismos. Tampoco necesitan las
+  funcionalidades de React.Component. En otras palabras, son componentes simples, como por ejemplo un título. Se definen usando funciones, no clases.
+  * Stateful Components: Son los componentes mas comunes de React. Tienen State y lifecycle y son capaces de modificarse a si mismos y los componentes
+  dentro de ellos. Pueden ser definidos a traves de "function functionName(){}" o usando clases de Javascript ES6.
 
-### Making a Progressive Web App
+## Built With
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
 
-### Advanced Configuration
+## Authors
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+* **Lucas Paviotti** - [Imhest](https://github.com/Imhest)
 
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

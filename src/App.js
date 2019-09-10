@@ -1,26 +1,19 @@
+// Lo primero que se hace en un componente de React es importar los demas componentes y recursos que necesitamos. 
 import React from 'react';
-import logo from './logo.svg';
+import Navigation from './components/Navigation/Navigation';
 import './App.css';
 
+// En éste caso app.js es un functional stateful component:
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navigation />
+      {/*<Logo />
+      <ImageLinkForm />
+      <FaceRecognition />*/}
     </div>
   );
 }
 
+// Al final el componente se exporta para poder ser importado por los demás.
 export default App;
