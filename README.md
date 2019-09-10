@@ -51,15 +51,30 @@ npm start ejecuta la app, npm build la empaqueta para producción.
 
 ## Diario de desarrollo de la app
 
+COMO FUNCIONA REACT:
 React funciona a traves del uso de componentes. Éstos van uno dentro del otro dependiendo en que pantalla estemos trabajando. Los componentes se usan como si fueran tags de html, esto es un lenguaje de React llamado JSX.
 
 Por ejemplo, si tenemos un componente <Button> y necesitamos que <Button>, el cual fue creado en Button.js, esté en la pantalla de login, la cual está en Login.js, usaríamos el componente <Button> dentro de Login.js. De todas formas <Button> puede ser usado en cualquier parte de la app, ya que es un componente independiente. Para una explicación con ejemplos, ver el archivo App.js (está comentado).
 
-Los componentes de React se definen desde una función (functional components) o desde una clase (class components) y pueden ser de 2 tipos:
-  * Stateless Components: Son componentes que no tienen estado (STATE). Es decir que no guardan información por si mismos. Tampoco necesitan las
-  funcionalidades de React.Component. En otras palabras, son componentes simples, como por ejemplo un título. Se definen usando funciones, no clases.
-  * Stateful Components: Son los componentes mas comunes de React. Tienen State y lifecycle y son capaces de modificarse a si mismos y los componentes
-  dentro de ellos. Pueden ser definidos a traves de "function functionName(){}" o usando clases de Javascript ES6.
+COMPONENTES:
+Los componentes de React se definen desde funciones o clases, pueden ser de 2 tipos:
+  * Functional (Stateless) Components: Son componentes que no tienen estado (STATE). Es decir que no guardan información por si mismos. Tampoco necesitan las funcionalidades de React.Component. En otras palabras, son componentes simples, como por ejemplo un título. Se definen usando funciones, no clases.
+  * Class (Stateful) Components: Son los componentes mas comunes de React. Tienen State y ciclo de vida y son capaces de modificarse a si mismos y los componentes dentro de ellos. Son definidos a través de clases de Javascript ES6.
+
+STATE:
+El estado o State es...
+
+LIFECYCLE:
+Los componentes tienen algo llamado ciclo de vida o lifecycle...
+
+ESTILOS:
+Hay varias formas de darle estilo a un componente:
+  1. CSS Stylesheet: Una hoja de estilos que se importa al componente.
+  2. Inline CSS: Se crea una variable que contiene el estilo, y se coloca en el elemento dentro de la propiedad style.
+  3. CSS in JS: El CSS es creado usando Javascript en vez de ser definido en archivos externos.
+  4. CSS Modules: Es como importar una hoja de estilos, pero todas las clases y animaciones estan hechas localmente.
+  5. Use a Library: Usar una libreria para manejar los estilos a lo Bootstrap. La mas famosa es Styled Components, una librería para React y React Native que te permite definir estilos como variables usando las backticks de ES6.
+La app usa la librería Tachyons, para hacer mas facil generar CSS y no preocuparse tanto por los estilos.
 
 ## Built With
 
